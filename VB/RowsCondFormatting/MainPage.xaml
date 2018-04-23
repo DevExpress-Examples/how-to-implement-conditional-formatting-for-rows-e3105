@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="RowsCondFormatting.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:local="clr-namespace:RowsCondFormatting">
+
+    <UserControl.DataContext>
+        <local:PersonsViewModel />
+    </UserControl.DataContext>
+    
+    <UserControl.Resources>
+        <local:ColorValueConverter x:Key="ColorValueConverter" MinValue="20" MaxValue="30" />
+    </UserControl.Resources>
+    
+    <StackPanel>
+        <dxg:GridControl Name="grid" ItemsSource="{Binding Persons}" AutoPopulateColumns="True">           
+            <dxg:GridControl.View>
+                <dxg:TableView AutoWidth="True" AllowEditing="True">
+                    <dxg:TableView.RowDecorationTemplate>
+                        <ControlTemplate TargetType="ContentControl">
+                            <Grid Background="{Binding Path=Row.Age, Converter={StaticResource ColorValueConverter}}">
+                                <ContentPresenter />
+                            </Grid>
+                        </ControlTemplate>
+                    </dxg:TableView.RowDecorationTemplate>
+                </dxg:TableView>
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </StackPanel>
+</UserControl>
