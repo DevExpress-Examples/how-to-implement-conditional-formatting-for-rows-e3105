@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [ColorValueConverter.cs](./CS/RowsCondFormatting/ColorValueConverter.cs) (VB: [ColorValueConverter.vb](./VB/RowsCondFormatting/ColorValueConverter.vb))
+* [MainPage.xaml](./CS/RowsCondFormatting/MainPage.xaml) (VB: [MainPage.xaml](./VB/RowsCondFormatting/MainPage.xaml))
+<!-- default file list end -->
 # How to implement conditional formatting for rows
 
 
